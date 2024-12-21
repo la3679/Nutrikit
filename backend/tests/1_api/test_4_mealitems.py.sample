@@ -1,0 +1,30 @@
+import unittest
+from tests.utilities.requests_utils import post_rest_call,get_rest_call,put_rest_call,delete_rest_call
+
+class Test5(unittest.TestCase):
+    def test_0_add_meal_item(self):
+        post_body = {
+            "item_id": 1,
+            "meal_name": "Salad",
+            "quantity": 3,
+        }
+        results= post_rest_call(self, f'http://localhost:5000/mealitems', json=post_body)
+        print(results)
+        
+    def test_1_view_meal_items(self):
+        response = get_rest_call(self,f"http://localhost:5000/mealitems")
+        print(response)
+        
+    def test_2_delete_meal_item(self):
+        post_body = {
+            "item_id": 1,
+            "meal_name": "Salad",
+            "quantity": 3,
+        }
+        post_rest_call(self, f'http://localhost:5000/mealitems', json=post_body)
+        headers = {
+            "meal_id": "1",
+        }
+        
+        response = delete_rest_call(self,f"http://localhost:5000/mealitems",delete_header=headers)
+        print(response)

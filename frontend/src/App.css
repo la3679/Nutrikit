@@ -1,0 +1,340 @@
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter",Helvetica,Arial,-apple-system,sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+/*header styling */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 102, 238);
+  color: #fff;
+  padding: 20px;
+}
+
+.header-left {
+  flex: 1; 
+}
+
+.header-right {
+  text-align: right;
+}
+
+.header-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.header-right ul li {
+  padding: 10px;
+  display: inline;
+  margin-right: 20px;
+  font-weight: bold;
+}
+.header-right ul li:hover {
+  background-color: #fff;
+  color: rgb(0, 102, 238);
+}
+.header-right ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.header-right ul li   button {
+  background-color: rgb(0, 102, 238);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-style:hidden;
+}
+.header-right button:hover {
+  color: rgb(0, 102, 238);
+  background-color: #fff;
+}
+
+/*main content area styling */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.login-form {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0px 0px 10px #ccc;
+  text-align: center;
+}
+
+.login-form h2 {
+  font-size: 24px;
+}
+
+.login-form button {
+  background-color: rgb(0, 102, 238);
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 10px;
+  border-color: #f4f4f4;
+  font-weight: bold;
+  border-style:solid;
+}
+.login-form button:hover {
+  color: rgb(0, 102, 238);
+  background-color: #fff;
+  border-color: rgb(0, 102, 238);  
+}
+
+/*footer */
+footer {
+  background-color: #151824;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+
+.form-group {
+  margin: 10px 0;
+}
+
+form {
+  text-align: center;
+}
+
+button.link-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Planner {
+  padding: 20px;
+}
+
+.food-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.food-item:hover {
+  background-color: rgba(14, 181, 218, 0.806);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Home */
+
+/* Style the nav element */
+.Home-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ccc;
+}
+
+.User-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the buttons inside the nav element */
+.Home-nav button {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: none;
+  border-bottom: 3.5px solid lightgray;
+  background-color: transparent;
+}
+
+/* Change the color of the button on hover */
+.Home-nav button:hover {
+  background-color: lightgray;
+}
+
+.Home-nav button.active {
+  background-color: rgba(211, 211, 211, 0.614) ; 
+  border-bottom: 3.5px solid rgb(0, 102, 238);
+}
+
+/* Diet Planner */
+.Planner {
+  padding: 20px;
+}
+
+.food-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.food-item:hover {
+  background-color: rgba(14, 181, 218, 0.806);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* User Goals */
+
+.Tracker, .DietGoals {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f6f7f8;
+  font-family: Arial, sans-serif;
+}
+
+.Tracker h1, .DietGoals h1 {
+  color: #4b4b4b;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.Tracker p {
+  color: #4b4b4b;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.Tracker button {
+  background-color: rgb(0, 102, 238);
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 10px;
+  border-color: #f4f4f4;
+  font-weight: bold;
+  border-style:solid;
+  margin-top: 10px;
+}
+
+.Tracker button:hover{
+  color: rgb(0, 102, 238);
+  background-color: #fff;
+  border-color: rgb(0, 102, 238);
+}
+
+.Goals button:hover {
+  background-color: #0056b3;
+}
+
+/* DietTracker - Table styling */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+td button{
+  background-color: rgb(0, 102, 238);
+  color: #fff;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14 px;
+  border-radius: 10px;
+  border-color: #f4f4f4;
+  font-weight: bold;
+  border-style: solid;
+}
+
+td button:hover{
+  color: rgb(0, 102, 238);
+  background-color: #fff;
+  border-color: rgb(0, 102, 238);
+}
+
+th {
+  background-color: rgb(0, 102, 238);
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #ccccccd4;
+}
+
+tr:hover {
+  background-color: #ddd;
+}

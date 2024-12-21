@@ -1,0 +1,30 @@
+image:
+  name: kalrabb/swen344-pg-py-base:latest
+
+services:
+  - postgres:14
+
+variables:
+  POSTGRES_DB: swen610
+  POSTGRES_USER: swen610
+  POSTGRES_PASSWORD: whowatchesthewatchmen
+  # PYTHON_RUN: python3
+  PYTHON_RUN: coverage run
+
+before_script:
+  - cd backend/
+  - pip install -r requirements.txt
+  - cp config/gitlab-credentials.yml config/db.yml
+  - python3 --version
+  - $PYTHON_RUN --data-file=coverage_server.data src/server.py & # fire up the server before we run our tests
+  - sleep 3
+
+after_script:
+  - cd backend/
+  - echo "Coverage report for unittests and server..."
+  - coverage report -m --data-file=coverage_unittest.data
+
+testrunner:
+  script:
+    - $PYTHON_RUN --data-file=coverage_unittest.data --source=src/db,tests -m unittest -v # run the unit tests; -v prints the test being run
+  stage: test

@@ -1,0 +1,51 @@
+image:
+  name: node:18
+
+variables:
+  CURR_APP: frontend
+  PROJECT_NAME: frontend
+  OUTPUT_DIR: public/$PROJECT_NAME
+  URL_APP: $CI_PAGES_URL
+  
+
+.script-run-build: &script-run-build |
+  echo "CURR APP:"$CURR_APP
+
+  #Make sure directory for the app exists
+
+  if [  ! -d "$CURR_APP" ]; then
+    echo "CURRENT APP not set, or directory does not exist - nothing to build!"
+  else
+    cd $CURR_APP 
+    npm install
+    npm run build
+    echo "Copy build folder to gitlab public folder"
+    mkdir ../public
+    cp -p -r build/* ../public/ 
+    #echo "Your web page will be at" $CI_PAGES_URL
+
+  fi
+  echo "Return to the root directory"
+  # cd .. 
+
+cache:
+  paths:
+  - node_modules/
+
+before_script:
+  - pwd
+  - python3 --version
+  - node --version
+pages:
+  stage: deploy
+  script:
+    - CI=""
+    - echo "Check current directory"
+    - pwd
+    - CURR_APP=$PROJECT_NAME
+    - *script-run-build 
+    - sed -i "s|</body>|<div style="float:left"><small>Built on GitLab branch <code>$CI_COMMIT_REF_NAME</code> commit <code>$CI_COMMIT_SHORT_SHA</code> $(date)</small></div></body>|g" public/index.html
+    - echo "URL for FRONTEND:"$URL_APP
+  artifacts:
+    paths:
+    - public

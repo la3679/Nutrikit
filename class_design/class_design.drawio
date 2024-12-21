@@ -1,0 +1,34 @@
+<mxfile host="app.diagrams.net" modified="2023-10-31T22:35:52.627Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76" etag="TyASCmgd4FDxDaPiDprK" version="22.0.8" type="device">
+  <diagram name="Page-1" id="LMZbuipIvIKaLdhB1mFI">
+    <mxGraphModel dx="807" dy="441" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="J0evsZpG7cQjJW_owDlR-1" value="User: DB_INTERFACE" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="100" width="190" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="J0evsZpG7cQjJW_owDlR-2" value="- id: string&lt;br&gt;-&amp;nbsp;display_name&lt;span style=&quot;background-color: initial;&quot;&gt;: string&lt;/span&gt;&lt;br&gt;- email: string&lt;br&gt;-&amp;nbsp;password_hash&lt;span style=&quot;background-color: initial;&quot;&gt;: string&lt;/span&gt;&lt;br&gt;- height: float&lt;br&gt;- weight: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="J0evsZpG7cQjJW_owDlR-1" vertex="1">
+          <mxGeometry y="26" width="190" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="J0evsZpG7cQjJW_owDlR-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="J0evsZpG7cQjJW_owDlR-1" vertex="1">
+          <mxGeometry y="120" width="190" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J0evsZpG7cQjJW_owDlR-4" value="+ getUser(): dict&lt;br&gt;+ updateUser(dict): dict&lt;br&gt;+ deleteUser(): int&lt;br&gt;+ insertUser(dict): dict&lt;br&gt;+ insertSessionKey(string)&lt;br&gt;+ resetSessionKey(string)&lt;br&gt;+ checkSessionKey(string): bool&lt;br&gt;+ checkPassword(string): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="J0evsZpG7cQjJW_owDlR-1" vertex="1">
+          <mxGeometry y="128" width="190" height="132" as="geometry" />
+        </mxCell>
+        <mxCell id="J0evsZpG7cQjJW_owDlR-9" value="Auth" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="120" width="160" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="J0evsZpG7cQjJW_owDlR-10" value="- id: string&lt;br&gt;- user: User&lt;br&gt;- input_password: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="J0evsZpG7cQjJW_owDlR-9" vertex="1">
+          <mxGeometry y="26" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="J0evsZpG7cQjJW_owDlR-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="J0evsZpG7cQjJW_owDlR-9" vertex="1">
+          <mxGeometry y="80" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J0evsZpG7cQjJW_owDlR-12" value="+ login():&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="J0evsZpG7cQjJW_owDlR-9" vertex="1">
+          <mxGeometry y="88" width="160" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
